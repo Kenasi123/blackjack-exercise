@@ -1,0 +1,5 @@
+1. Style the html blackjack table. 
+
+2. Add images to the black jack table.
+
+3. Write instructions for the black jack game. 
