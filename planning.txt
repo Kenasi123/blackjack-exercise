@@ -1,0 +1,87 @@
+1. Style the html blackjack table. 
+
+2. Add images to the black jack table.
+
+3. Remove the images from the black jack table.  
+
+4. Review methods and properties for DOM. 
+
+5. Write instructions for the black jack game.  
+
+6.Dealing the cards, add event listener to the deal button so that when the deal button is clicked  
+The deal event is done to player, once to the dealer, then the player, then the dealer. 
+
+Create a new image element and append it to the #dealer-hand and the player-hand elements 
+
+7. Hit - me, add event listener to the hit me button so that when clicked the button appends an additional new element of the card to the player and then to the dealer 
+
+8. Create a card deck of cards 
+
+King of Hearts:
+
+{ rank: 13, suit: 'hearts' }
+4 of Spades:
+
+{ rank: 4, suit: 'spades' }
+Ace of Diamonds:
+
+{ rank: 1, suit: 'diamonds' }  
+
+Write a function to loop through and generate a deck of 52 cards 
+
+Function buildDeck { 
+
+Variable = { 52 cards } {
+
+
+	return variable
+
+} 
+
+There are 4 suits that rank from 1 -13 
+
+-Make sure the https can hold 52 cards  
+
+9. Deal the deck 
+
+Create an array with dealerHand playerHand that are used to calculate the total points 
+
+Remove a card from the deck and place the card into playerHand array  
+
+Remove and return an item from the array (method) 
+
+10. Image from Cards  
+
+Write a function getCardImage that will take a card object and return an image element containing the correct image URL for that card. As an example (this is not code you should use), the following code takes a single card and attaches the appropriate card image to the body of the page:
+
+const card = { rank: 13, suit: 'hearts' };
+const newCardImage = getCardImage(card)
+document.body.append(newCardImage) 
+
+11. For fixed number of times, randomly choose 2 cards within the deck and swap them.
+Create a new array, randomly choose one card after another from the original array and push it to the new array.
+Search on StackOverflow for a solution to "shuffle a javascript array" 
+
+12. Write a function calculatePoints that takes in an array of card objects and returns the points for that hand. Example:
+
+const playerHand = [ 
+     { rank: 10, suit: 'diamonds' }, 
+     { rank: 12, suit: 'spades'} 
+];
+const playerPoints = calculatePoints(playerHand);
+console.log(playerPoints);
+// 20
+
+13. After dealing any card, display the current points for the dealer and the player. You may want to consider adding this code to your render function
+ Create a display on the HTML file 
+
+14. Check for busts after each card is dealt. A bust is when either the dealer or the player's hand go over 21 points. When that happens, they lose. If there is a bust, display a message on the page saying that they busted. There is a div with an id of messages already on the page that you can use to do this.
+
+1. Hand > Dealers 
+If Hand > 21 = Bust 
+	Return method game ends ?
+If Hand < 21  
+
+15. Display string of winner when game comes to an end display 
+
+16. Restart game 
