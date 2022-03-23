@@ -45,14 +45,42 @@ document.addEventListener('DOMContentLoaded', function() {
       } else { 
           player.appendChild(card); 
       } 
-
       }
-
-
-
     })
 
+    //Create a function buildDeck returns a new array with 52 card objects. 
+    //There are 4 suits: diamonds, clubs, hearts and spades. 
+    //For each suit there is a rank from 1 to 13. 
 
-})
+   
+  function buildDeck () {
+
+    let ranks = ['1','2','3','4','5','6','7','8','9','10','11','12','13']; //13
+    let suits = ['diamonds','clubs','hearts','spades']; //4 
+    //13 * 4 = 52 
+    
+
+    for (let index = 0 ; index < 13; index++) {
+      //console.log(ranks[index])
+      
+        for (let suits_index = 0; suits_index < 4; suits_index++) {
+        //console.log(suits[suits_index])
+          
+        let newCard = (`rank :${ranks[index]}, suit:${suits[suits_index]}`);
+         console.log(newCard);
+            
+        }
+    }
+   
+}
+    
+  buildDeck();
+
+    })
+  
+ 
+
+
+
   
     
