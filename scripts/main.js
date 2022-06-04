@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const dealer = document.getElementById("dealer-hand");
   const player = document.getElementById("player-hand");
   const hit_button = document.getElementById('hit-button'); 
+  let cardDeck = [] 
+  let playerHand = []
+  let dealerHand = []
+  
+
  
 //adds a click function to deal button 
     deal_button.addEventListener("click", function() {
@@ -17,15 +22,15 @@ document.addEventListener('DOMContentLoaded', function() {
           card.src = "images/2_of_clubs.png";  // pulls a card image
         
 
-        if (dealerOrPlayer == "dealer" ) {
-            dealer.appendChild(card);  // if dealer o
-        } else { 
-            player.appendChild(card); 
-        } 
+          if (dealerOrPlayer == "dealer" ) {
+              dealer.appendChild(card);  // if dealer o
+          } else { 
+              player.appendChild(card); 
+          } 
 
-        if(index == 1) {
-           dealerOrPlayer = "player";
-        }
+          if(index == 1) {
+            dealerOrPlayer = "player";
+          }
         }
     })
  
@@ -37,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let card = document.createElement("img");
         card.src = "images/2_of_clubs.png"; 
 
-        if (index == 0 ) {
+        if (index == 0) {
           dealer.appendChild(card); 
       } else { 
           player.appendChild(card); 
@@ -54,32 +59,29 @@ document.addEventListener('DOMContentLoaded', function() {
      
     let suits = ['diamonds','clubs','hearts','spades'];
     
-    function buildDeck () {
- 
-   // nested for loop for every rank four suits are added to that rank 
-    for (let index = 0 ; index < 13; index++) {
-      //console.log(ranks[index])
-      
-        for (let suits_index = 0; suits_index < 4; suits_index++) {
-        //console.log(suits[suits_index])
-    
-        const newCard = { Key : ranks[index], Values : suits[suits_index] };
+  function buildDeck () {
 
-            cardDeck.push(newCard);
-            
-        //console.log(newCard)
-
-        }
-    let cardDeck = new realDeck; // use this through out the function
+    // nested for loop for every rank four suits are added to that rank 
+      for (let index = 0 ; index < 13; index++) {
+        //console.log(ranks[index])
+        
+          for (let suits_index = 0; suits_index < 4; suits_index++) {
+          //console.log(suits[suits_index])
+          var card = {} 
+          card.ranks = ranks[index];
+          card.suits = suits[suits_index];
+          card.img = `images/${ranks}_of_${suits}.png`
+  
+            cardDeck.push(card)  
+          //console.log(newCard)
+          
+          }
+          
+        } 
+      return cardDeck;
       } 
-    }
-    buildDeck();
-    console.log(cardDeck);   
-    
+  buildDeck();
 
-   let playerHand = []
-   let dealerHand = []
-   
     deal_button.addEventListener("click", function() {
     
     // adds a card to the player hand after click   
@@ -102,15 +104,22 @@ document.addEventListener('DOMContentLoaded', function() {
       card.src = "images/king_of_hearts.png"; 
       dealer.removeChild(card);
       } 
-      //cardDeck.pop();
+      cardDeck.pop();
       
     
     //dealDeck();
     console.log(cardDeck);
   }) 
 
-    // getCardImage function () { 
+    // getCardImage function (card) { 
+      
+    //   const card = { `images/${ranks}.png_of_images/${suit}.png`};
+      
+    //   document.body.append(newCardImage);
 
+    // } 
+    // getCardImage(); 
+    // const new CardImage = getCardImage(card)
     //   const cardDeck = [
     //     {rank: "2", suit: "spades"}
     //     {rank: "2", suit: "spades"}
